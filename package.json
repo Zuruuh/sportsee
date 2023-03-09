@@ -1,24 +1,55 @@
 {
   "name": "sportsee",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "lint:eslint": "eslint",
+    "lint:typescript": "tsc",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "server:start": "docker run --rm --name sportsee-server -p 3000:3000 -d zuruh/sportsee-server yarn start",
     "server:stop": "docker stop $(docker container list --filter name=sportsee-server --format '{{.ID}}') 0"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router": "^6.8.2",
+    "react-router-dom": "^6.8.2"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "7.0.0-beta.64",
+    "@storybook/addon-interactions": "7.0.0-beta.64",
+    "@storybook/addon-links": "7.0.0-beta.64",
+    "@storybook/react": "7.0.0-beta.64",
+    "@storybook/react-vite": "7.0.0-beta.64",
+    "@testing-library/dom": "^9.0.1",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@total-typescript/ts-reset": "^0.4.2",
+    "@types/node": "^18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
     "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/coverage-c8": "^0.29.2",
+    "@vitest/ui": "^0.29.2",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.11",
+    "prettier": "^2.8.4",
+    "storybook": "^7.0.0-alpha.51",
     "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "vite": "^4.1.0",
+    "vite-plugin-svgr": "^2.4.0",
+    "vitest": "^0.29.2"
   }
 }
