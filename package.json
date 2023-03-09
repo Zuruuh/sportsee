@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server:start": "docker run --rm --name sportsee-server -p 3000:3000 -d zuruh/sportsee-server yarn start",
+    "server:stop": "docker stop $(docker container list --filter name=sportsee-server --format '{{.ID}}') 0"
   },
   "dependencies": {
     "react": "^18.2.0",
