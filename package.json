@@ -8,8 +8,7 @@
     "preview": "vite preview",
     "lint:eslint": "eslint",
     "lint:typescript": "tsc",
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
+    "ci:build": "docker build -f docker/ci.dockerfile -t zuruh/sportsee-ci .",
     "server:start": "docker run --rm --name sportsee-server -p 3000:3000 -d zuruh/sportsee-server yarn start",
     "server:stop": "docker stop $(docker container list --filter name=sportsee-server --format '{{.ID}}') 0"
   },
