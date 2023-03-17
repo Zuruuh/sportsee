@@ -39,6 +39,7 @@ specifiers:
   typescript: ^4.9.3
   vite: ^4.1.0
   vite-plugin-svgr: ^2.4.0
+  zod: ^3.21.4
 
 dependencies:
   prop-types: 15.8.1
@@ -47,6 +48,7 @@ dependencies:
   react-router: 6.8.2_react@18.2.0
   react-router-dom: 6.8.2_biqbaboplfbrettd7655fr4n2y
   tailwindcss: 3.2.7_postcss@8.4.21
+  zod: 3.21.4
 
 devDependencies:
   '@storybook/addon-essentials': 7.0.0-beta.64_biqbaboplfbrettd7655fr4n2y
@@ -8177,3 +8179,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod/3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
