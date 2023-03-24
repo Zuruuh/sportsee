@@ -3,9 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "vite -c vite.config.ts",
+    "build": "tsc && vite build -c vite.config.ts",
+    "preview": "vite preview -c vite.config.ts",
+    "ladle": "ladle serve",
     "lint:eslint": "eslint",
     "lint:typescript": "tsc",
     "ci:build": "docker build -f docker/ci.dockerfile -t zuruh/sportsee-ci .",
@@ -22,6 +23,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@ladle/react": "^2.10.2",
     "@testing-library/dom": "^9.0.1",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
