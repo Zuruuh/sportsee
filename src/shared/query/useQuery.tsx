@@ -22,11 +22,11 @@ type QueryOutput<T> =
       data: T;
     });
 
-export function useQuery<TQuery extends z.ZodTypeAny>(
+export function useQuery<TSchema extends z.ZodTypeAny>(
   query: Query,
-  schema: TQuery
-): QueryOutput<z.infer<TQuery>> {
-  type TData = z.infer<TQuery>;
+  schema: TSchema
+): QueryOutput<z.infer<TSchema>> {
+  type TData = z.infer<TSchema>;
 
   const [data, setData] = useState<TData | undefined>();
   const [isInitialized, setIsInitialized] = useState<boolean>(false);
@@ -48,7 +48,8 @@ export function useQuery<TQuery extends z.ZodTypeAny>(
           console.error(result.error);
           setIsError(true);
         }
-      });
+      })
+      .catch(console.error);
   }, [query, schema]);
 
   return {
