@@ -1,34 +1,29 @@
-import { type FC } from 'react';
+import { useMemo, type FC } from 'react';
 import PropTypes from 'prop-types';
-import type { HexColor } from '~/shared/types/HexColor';
-import HexColorValidator from '~/shared/validator/HexColorValidator';
-import type { ReactSvgComponent } from '~/shared/types/ReactSVGComponent';
+import {
+  SQUARE_ICON_COLORS,
+  SquareIconColorMap,
+  type SquareIconProps,
+} from '~/shared/components/SquareIcon/SquareIcon.types';
 
-export interface SquareIconProps {
-  iconColor: HexColor;
-  backgroundColor: HexColor;
-  icon: ReactSvgComponent;
-  alt: string;
-}
+const SquareIcon: FC<SquareIconProps> = ({ color, icon: Icon, alt }) => {
+  const { backgroundColor, color: fill } = useMemo(
+    () => SquareIconColorMap[color],
+    [color]
+  );
 
-const SquareIcon: FC<SquareIconProps> = ({
-  iconColor,
-  backgroundColor,
-  icon: Icon,
-  alt,
-}) => {
   return (
     <div
       aria-label={alt}
       className="flex h-16 w-16 items-center justify-center rounded-md"
       style={{
-        backgroundColor,
+        backgroundColor: backgroundColor ?? fill + '1A',
       }}
     >
       {
         <Icon
           style={{
-            fill: iconColor,
+            fill,
           }}
         />
       }
@@ -37,8 +32,7 @@ const SquareIcon: FC<SquareIconProps> = ({
 };
 
 SquareIcon.propTypes = {
-  iconColor: HexColorValidator,
-  backgroundColor: HexColorValidator,
+  color: PropTypes.oneOf(Object.values(SQUARE_ICON_COLORS)).isRequired,
   icon: PropTypes.func.isRequired,
   alt: PropTypes.string.isRequired,
 };

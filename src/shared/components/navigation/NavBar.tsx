@@ -5,7 +5,7 @@ import { ReactComponent as SwimmingIcon } from './assets/swimming.svg';
 import { ReactComponent as BicycleIcon } from './assets/bicycle.svg';
 import { ReactComponent as DumbellIcon } from './assets/dumbell.svg';
 import NavLink from './components/NavLink';
-import SquareIcon from '~/shared/components/SquareIcon';
+import SquareIcon, { SQUARE_ICON_COLORS } from '~/shared/components/SquareIcon';
 
 export interface NavBarProps {
   children: ReactNode;
@@ -44,9 +44,7 @@ const NavBar: FC<NavBarProps> = ({ children }) => {
                 <SquareIcon
                   alt={label}
                   icon={icon}
-                  /* TODO: Find a way to not have to hardcode color values */
-                  backgroundColor="#ffffff"
-                  iconColor="#FF0101"
+                  color={SQUARE_ICON_COLORS.PRIMARY}
                 />
               </li>
             ))}
