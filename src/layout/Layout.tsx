@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import NavBar from '~/shared/components/navigation/NavBar';
+import NavBar from '~/shared/components/NavBar';
 
 const Layout: FC = () => {
   return (

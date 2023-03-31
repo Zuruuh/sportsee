@@ -53,7 +53,7 @@ const NavBar: FC<NavBarProps> = ({ children }) => {
             Copyright, SportSee 2023
           </span>
         </div>
-        <main>{children}</main>
+        <main className="h-full w-full">{children}</main>
       </div>
     </div>
   );
