@@ -27,5 +27,6 @@ dist-ssr
 .env.*.local
 
 vite.config.ts
+vite.config.ts.timestamp-*
 certs/*
 !certs/.gitkeep
