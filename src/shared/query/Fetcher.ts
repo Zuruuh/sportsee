@@ -5,5 +5,7 @@ export interface FetchOptions {
 }
 
 export interface FetcherInterface {
-  fetch(url: string | URI, options?: FetchOptions): Promise<unknown>;
+  fetch(url: string | URI | URL, options?: FetchOptions): Promise<unknown>;
 }
+
+export type FetcherProvider = () => FetcherInterface;

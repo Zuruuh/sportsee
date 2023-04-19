@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import type { Query } from './Query';
 import { z } from 'zod';
 import { fetcherProvider } from './provider/fetcherProvider';
+import { useErrorBoundary } from 'react-error-boundary';
 
 const fetcher = fetcherProvider();
 
@@ -13,7 +14,7 @@ interface BaseQueryOutput<T> {
   doQuery: () => unknown;
 }
 
-type QueryOutput<T> =
+export type QueryOutput<T> =
   | BaseQueryOutput<T>
   | (BaseQueryOutput<T> & {
       isLoading: false;
@@ -32,6 +33,7 @@ export function useQuery<TSchema extends z.ZodTypeAny>(
   const [isInitialized, setIsInitialized] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
+  const { showBoundary } = useErrorBoundary();
 
   const doQuery = useCallback(() => {
     setIsInitialized(true);
@@ -49,8 +51,8 @@ export function useQuery<TSchema extends z.ZodTypeAny>(
           setIsError(true);
         }
       })
-      .catch(console.error);
-  }, [query, schema]);
+      .catch(showBoundary);
+  }, [query, schema, showBoundary]);
 
   return {
     data,
