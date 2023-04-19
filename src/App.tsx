@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import HomePage from './pages/Home/HomePage';
+import DashbordPage from './pages/Dashboard/DashboardPage';
 import Layout from './layout/Layout';
 import '~/shared/styles/index.css';
 import { UserContext } from '~/shared/contexts/UserContext';
@@ -8,7 +8,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    children: [{ element: <HomePage />, index: true }],
+    children: [{ element: <DashbordPage />, index: true }],
   },
 ]);
 

@@ -1,9 +1,9 @@
 import { useEffect, type FC, useMemo } from 'react';
-import DailyActivity from '~/pages/Home/components/DailyActivity';
-import Performances from '~/pages/Home/components/Performances';
-import Sessions from '~/pages/Home/components/Sessions';
-import SquareChart from '~/pages/Home/components/SquareChart/SquareChart';
-import Score from '~/pages/Home/components/Score/Score';
+import DailyActivity from './components/DailyActivity';
+import Performances from './components/Performances';
+import Sessions from './components/Sessions';
+import SquareChart from './components/SquareChart/SquareChart';
+import Score from './components/Score';
 import { UserQuery, UserQuerySchema } from './queries/User';
 import { useUser } from '~/shared/hooks/useUser';
 import { useWrappedQuery } from '~/shared/query/useWrappedQuery';
@@ -52,7 +52,7 @@ const keyDataToSquareIconMapping = {
   }
 >;
 
-const HomePage: FC = () => {
+const DashboardPage: FC = () => {
   const { id: userId } = useUser();
   const { doQuery, data, isLoading, isInitialized, isError } = useWrappedQuery(
     UserQuery,
@@ -83,7 +83,7 @@ const HomePage: FC = () => {
       <div className="flex h-full w-full flex-col lg:flex-row">
         <div className="flex h-full w-full flex-col">
           <div className="flex h-full w-[90%] flex-col">
-            <div className=" mb-4 h-80 w-full bg-[#FBFBFB] p-4 xl:h-1/2">
+            <div className=" mb-4 h-80 w-full bg-[#FBFBFB] p-4 xl:h-80">
               <DailyActivity />
             </div>
             <div className="flex w-full flex-col xl:h-1/2 xl:flex-row">
@@ -140,4 +140,4 @@ const HomePage: FC = () => {
   );
 };
 
-export default HomePage;
+export default DashboardPage;

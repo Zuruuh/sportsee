@@ -9,10 +9,7 @@ import {
   Tooltip,
 } from 'recharts';
 import { useWrappedQuery } from '~/shared/query/useWrappedQuery';
-import {
-  PerformanceQuery,
-  PerformanceSchema,
-} from '~/pages/Home/queries/Performance';
+import { PerformanceQuery, PerformanceSchema } from './queries';
 import { useUser } from '~/shared/hooks/useUser';
 
 const Performances: FC = () => {
