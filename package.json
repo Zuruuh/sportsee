@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite -c vite.config.ts",
-    "build": "tsc && vite build -c vite.config.ts",
-    "preview": "vite preview -c vite.config.ts",
+    "build": "tsc && vite build -c vite.config.dist.ts",
+    "preview": "vite preview -c vite.config.dist.ts",
     "ladle": "ladle serve",
     "lint:eslint": "eslint",
     "lint:typescript": "tsc",

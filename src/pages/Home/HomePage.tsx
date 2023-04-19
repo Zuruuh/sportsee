@@ -2,6 +2,8 @@ import { useEffect, type FC, useMemo } from 'react';
 import DailyActivity from '~/pages/Home/components/DailyActivity';
 import Performances from '~/pages/Home/components/Performances';
 import Sessions from '~/pages/Home/components/Sessions';
+import SquareChart from '~/pages/Home/components/SquareChart/SquareChart';
+import Score from '~/pages/Home/components/Score/Score';
 import { UserQuery, UserQuerySchema } from './queries/User';
 import { useUser } from '~/shared/hooks/useUser';
 import { useWrappedQuery } from '~/shared/query/useWrappedQuery';
@@ -14,8 +16,7 @@ import { ReactComponent as EnergyIcon } from './assets/energy.svg';
 import { ReactComponent as ChickenIcon } from './assets/chicken.svg';
 import { ReactComponent as AppleIcon } from './assets/apple.svg';
 import { ReactComponent as CheeseburgerIcon } from './assets/cheeseburger.svg';
-import SquareChart from '~/pages/Home/components/SquareChart/SquareChart';
-import Score from '~/pages/Home/components/Score/Score';
+
 const keyDataToSquareIconMapping = {
   calorieCount: {
     backgroundColor: SQUARE_ICON_COLORS.RED,

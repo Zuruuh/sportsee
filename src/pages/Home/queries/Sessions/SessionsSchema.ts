@@ -26,6 +26,6 @@ export const SessionsQuerySchema = z.object({
   }),
 });
 
-export type SessionQuery = z.infer<typeof SessionsQuerySchema> & {
+export type SessionQueryType = z.infer<typeof SessionsQuerySchema> & {
   data: { sessions: RawSession[] };
 };
