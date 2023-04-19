@@ -1,7 +1,7 @@
-import {z} from 'zod';
+import { z } from 'zod';
 
 export const UserSchema = z.object({
-    id: z.number()
+  id: z.number(),
 });
 
-export type User = z.infer<typeof UserSchema>
+export type User = z.infer<typeof UserSchema>;
