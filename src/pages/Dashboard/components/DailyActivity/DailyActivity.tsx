@@ -17,7 +17,7 @@ const DailyActivity: FC = () => {
   const { id: userId } = useUser();
   const { data: rawActivities, doQuery } = useWrappedQuery(
     ActivityQuery,
-    { userId },
+    useMemo(() => ({ userId }), [userId]),
     ActivitySchema
   );
 
